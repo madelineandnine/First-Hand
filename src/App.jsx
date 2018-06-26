@@ -6,6 +6,8 @@ import LoginForm from './components/Login/LoginForm'
 import SignupForm from './components/SignupForm'
 import Header from './components/Header'
 import Home from './components/Home'
+import Card from './components/Card'
+import Main from './pages/Main'
 
 const DisplayLinks = props => {
 	if (props.loggedIn) {
@@ -20,6 +22,11 @@ const DisplayLinks = props => {
 					<li>
 						<Link to="#" className="nav-link" onClick={props._logout}>
 							Logout
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link to="/main" className="nav-link">
+							main
 						</Link>
 					</li>
 				</ul>
@@ -112,13 +119,13 @@ class App extends Component {
 
 	render() {
 		return (
+			<nav class="navbar">
 			<div className="App">
 				<h1>This is the main App component</h1>
 				<Header user={this.state.user} />
 				{/* LINKS to our different 'pages' */}
 				<DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn} />
 				{/*  ROUTES */}
-				{/* <Route exact path="/" component={Home} /> */}
 				<Route exact path="/" render={() => <Home user={this.state.user} />} />
 				<Route
 					exact
@@ -126,12 +133,14 @@ class App extends Component {
 					render={() =>
 						<LoginForm
 							_login={this._login}
-							_googleSignin={this._googleSignin}
 						/>}
 				/>
 				<Route exact path="/signup" component={SignupForm} />
+				<Route exact path="/main" component={Main} />
+
 				{/* <LoginForm _login={this._login} /> */}
 			</div>
+			</nav>
 		)
 	}
 }
