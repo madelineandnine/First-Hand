@@ -1,5 +1,6 @@
 import React from "react";
 import "./card.css"; 
+import models from '../../../server/db/models'; 
 
 const Card = props => (
     <div class="ui card">
