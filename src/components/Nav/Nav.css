@@ -1,0 +1,17 @@
+.App {
+  float: right; 
+  padding: 20px;
+  color: white; 
+}
+
+.navbar {
+  padding: 10px; 
+  float: right; 
+}
+
+.ui-button {
+  padding: 10px; 
+  float: right; 
+}
+
+

@@ -1,8 +1,8 @@
 // Loading evnironmental variables here
-/* if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
 	console.log('loading dev environments')
 	require('dotenv').config()
-} */
+} 
 require('dotenv').config()
 
 const express = require('express')
@@ -70,6 +70,9 @@ if (process.env.NODE_ENV === 'production') {
 
 /* Express app ROUTING */
 app.use('/auth', require('./auth'))
+
+app.use('/api', router);
+
 
 // ====== Error handler ====
 app.use(function(err, req, res, next) {

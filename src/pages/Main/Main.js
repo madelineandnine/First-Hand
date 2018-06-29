@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Card from "../../components/Card";
+import SubmissionCard from '../../components/Card'
 import API from "../../utils/API"; 
+import { Container } from "../../components/Grid";
 
 
 class Submissions extends Component {
@@ -19,7 +20,13 @@ class Submissions extends Component {
 
 render() {
   return (
-    <Card />
+    <Container fluid>
+    <SubmissionCard 
+    
+      topic={Submissions.topic}
+      language={Submissions.language}
+    />
+    </Container>
   )
 }
 }; 

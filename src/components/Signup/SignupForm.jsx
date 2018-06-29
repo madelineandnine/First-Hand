@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import './signup.css'
 
 class SignupForm extends Component {
 	constructor() {
@@ -44,22 +46,21 @@ class SignupForm extends Component {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		}
 		return (
-			<div className="SignupForm">
-				<h1>Signup form</h1>
+			 <div className="login-form">
 				<label htmlFor="username">Username: </label>
 				<input
 					type="text"
 					name="username"
 					value={this.state.username}
 					onChange={this.handleChange}
-				/>
-				<label htmlFor="password">Password: </label>
+				/> 
+				<label htmlFor="password">Password: </label> 
 				<input
 					type="password"
 					name="password"
 					value={this.state.password}
 					onChange={this.handleChange}
-				/>
+				/> 
 				<label htmlFor="confirmPassword">Confirm Password: </label>
 				<input
 					type="password"
@@ -68,7 +69,7 @@ class SignupForm extends Component {
 					onChange={this.handleChange}
 				/>
 				<button onClick={this.handleSubmit}>Sign up</button>
-			</div>
+			</div> 
 		)
 	}
 }
