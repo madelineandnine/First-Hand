@@ -1,5 +1,6 @@
 const db = require("../server/db/models");
 
+
 module.exports = {
   findAll: function(req, res) {
     db.Submission
