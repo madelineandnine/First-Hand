@@ -48,7 +48,7 @@ const DisplayLinks = props => {
 		)
 	} else {
 		return (
-			<div class="main">
+			<div className="main">
 			<nav className="navbar">
 				
 				<Menu.Item position='right'>
