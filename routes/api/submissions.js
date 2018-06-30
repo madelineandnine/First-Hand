@@ -2,12 +2,13 @@ const router = require("express").Router();
 const submissionController = require("../../controllers/submissionController");
 
 
-router.route("/api/submissions")
+router
+  .route("/")
   .get(submissionController.findAll)
   .post(submissionController.create);
 
 router
-  .route("/api/submissions/:id")
+  .route("/:id")
   .get(submissionController.findById)
   .put(submissionController.update)
   .delete(submissionController.remove);

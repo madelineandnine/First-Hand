@@ -14,6 +14,7 @@ const dbConnection = require('./db') // loads our connection to the mongo databa
 const passport = require('./passport')
 const app = express()
 const PORT = process.env.PORT || 8080
+const router = require('express').Router()
 
 // ===== Middleware ====
 app.use(morgan('dev'))

@@ -17,7 +17,7 @@ import {
 } from 'semantic-ui-react'
 import Nav from './components/Nav'
 import HomepageLayout from './components/Home'
-import Submissions from './pages/Main'
+import Submissions from './pages/Submissions'
 
 const App  = () => (
   <div>

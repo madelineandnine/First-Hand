@@ -10,7 +10,7 @@ import SignupForm from '../Signup/SignupForm'
 import SignupModal from '../Signup/SignupModal'
 //import Header from './components/Header'
 import Home from '../Home'
-import Submissions from '../../pages/Main'
+import Submissions from '../../pages/Submissions'
 import {
 	Button,
 	Divider,
