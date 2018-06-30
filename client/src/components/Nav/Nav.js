@@ -1,58 +1,69 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import PropTypes from 'prop-types'
 import { Route, Link } from 'react-router-dom'
-import './App.css'
-import LoginForm from './components/Login/LoginForm'
-import SignupForm from './components/SignupForm'
-import Header from './components/Header'
-import Home from './components/Home'
-import Card from './components/Card'
-import Submissions from './pages/Main'
+import './Nav.css'
+import LoginForm from '../Login/LoginForm'
+import LoginFormTest from '../Login/logintestform'
+import LoginModal from '../Login/LoginModal'
+import SignupForm from '../Signup/SignupForm'
+import SignupModal from '../Signup/SignupModal'
+//import Header from './components/Header'
+import Home from '../Home'
+import Submissions from '../../pages/Submissions'
+import {
+	Button,
+	Divider,
+	Grid,
+	Header,
+	Icon,
+	Image,
+	List,
+	Modal,
+	Menu,
+	Responsive,
+	Segment,
+	Sidebar,
+	Visibility,
+	} from 'semantic-ui-react'
+import styled from 'styled-components'
+
 
 const DisplayLinks = props => {
 	if (props.loggedIn) {
 		return (
+
 			<nav className="navbar">
-				<ul className="nav">
-					<li className="nav-item">
-						<Link to="/" className="nav-link">
-							Home
-						</Link>
-					</li>
-					<li>
-						<Link to="#" className="nav-link" onClick={props._logout}>
-							Logout
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/main" className="nav-link">
-							main
-						</Link>
-					</li>
-				</ul>
+				<Menu.Item position='right'>
+				
+				  		<LoginModal style={{ marginLeft: '0.5em' }}/>
+						<SignupModal style={{ marginLeft: '0.5em' }}/>
+						<Submissions />
+				  <Button as='a' href="#" style={{ marginLeft: '0.5em' }} onClick={props._logout}>
+                    Logout
+                  </Button>
+                </Menu.Item>
 			</nav>
+			
 		)
 	} else {
 		return (
+			<div class="main">
 			<nav className="navbar">
-				<ul className="nav">
-					<li className="nav-item">
-						<Link to="/" className="nav-link">
-							Home
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/login" className="nav-link">
-							login
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/signup" className="nav-link">
-							sign up
-						</Link>
-					</li>
-				</ul>
+				
+				<Menu.Item position='right'>
+				
+				  		<LoginModal style={{ marginLeft: '0.5em' }}/>
+						<SignupModal style={{ marginLeft: '0.5em' }}/>
+					<Button as='a' href="/api/submissions">
+						Submissions
+					</Button>
+				  <Button as='a' href="#" style={{ marginLeft: '0.5em' }} onClick={props._logout}>
+                    Logout
+                  </Button>
+                </Menu.Item>
 			</nav>
+			</div>
 		)
 	}
 }
@@ -119,14 +130,13 @@ class App extends Component {
 
 	render() {
 		return (
-			<nav class="navbar">
+			
 			<div className="App">
-				<h1>This is the main App component</h1>
 				<Header user={this.state.user} />
 				{/* LINKS to our different 'pages' */}
 				<DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn} />
 				{/*  ROUTES */}
-				<Route exact path="/" render={() => <Home user={this.state.user} />} />
+				{/* <Route exact path="/" component={}} /> */}
 				<Route
 					exact
 					path="/login"
@@ -135,14 +145,19 @@ class App extends Component {
 							_login={this._login}
 						/>}
 				/>
-				<Route exact path="/signup" component={SignupForm} />
-				<Route exact path="/main" component={Submissions} />
+				<Route exact path="/signup" component={SignupModal} />
+				<Route exact path="/api/submissions" component={Submissions} />
 
 				{/* <LoginForm _login={this._login} /> */}
+
+				
 			</div>
-			</nav>
+		
+			
 		)
 	}
 }
+
+  
 
 export default App

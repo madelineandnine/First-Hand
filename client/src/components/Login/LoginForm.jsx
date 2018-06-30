@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-// import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_disabled_web.png'
-//import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
+import { Button, Form, Grid, Header, Image, Icon, Modal, Message, Segment } from 'semantic-ui-react'
+import axios from 'axios'
+
+
 
 class LoginForm extends Component {
 	constructor() {
@@ -22,6 +24,8 @@ class LoginForm extends Component {
 		})
 	}
 
+	
+
 	handleSubmit(event) {
 		event.preventDefault()
 		console.log('handleSubmit')
@@ -31,13 +35,15 @@ class LoginForm extends Component {
 		})
 	}
 
+
+
 	render() {
 		if (this.state.redirectTo) {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		} else {
 			return (
 				<div className="LoginForm">
-					<h1>Login form</h1>
+					
 					<form>
 						<label htmlFor="username">Username: </label>
 						<input

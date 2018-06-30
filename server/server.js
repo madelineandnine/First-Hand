@@ -1,8 +1,8 @@
 // Loading evnironmental variables here
-/* if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
 	console.log('loading dev environments')
 	require('dotenv').config()
-} */
+} 
 require('dotenv').config()
 
 const express = require('express')
@@ -14,6 +14,7 @@ const dbConnection = require('./db') // loads our connection to the mongo databa
 const passport = require('./passport')
 const app = express()
 const PORT = process.env.PORT || 8080
+const router = require('express').Router()
 
 // ===== Middleware ====
 app.use(morgan('dev'))
@@ -70,6 +71,9 @@ if (process.env.NODE_ENV === 'production') {
 
 /* Express app ROUTING */
 app.use('/auth', require('./auth'))
+
+app.use('/api', router);
+
 
 // ====== Error handler ====
 app.use(function(err, req, res, next) {

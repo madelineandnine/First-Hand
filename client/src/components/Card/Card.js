@@ -1,11 +1,11 @@
 import React from "react";
 import "./card.css"; 
-import models from '../../../server/db/models'; 
+import { Card } from "semantic-ui-react";
 
-const Card = props => (
+const SubmissionCard = props => (
     <div class="ui card">
   <div class="content">
-    <div class="header"> {props.title} </div>
+    <div class="header"> {props.topic} </div>
   </div>
   <div class="content">
     <div class="description"> {props.language} </div>
@@ -16,4 +16,4 @@ const Card = props => (
 
 //
 
-export default Card;
+export default SubmissionCard;
