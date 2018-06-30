@@ -35,13 +35,7 @@ class LoginFormTest extends Component {
     }
     
 render () {
-    return 
-  <div className='login-form'>
-    {/*
-      Heads up! The styles below are necessary for the correct render of this example.
-      You can do same with CSS, the main idea is that all the elements up to the `Grid`
-      below must have a height of 100%.
-    */}
+    return <div className='login-form'>
     <style>{`
       body > div,
       body > div > div,
@@ -56,22 +50,7 @@ render () {
         </Header>
         <Form size='large'>
           <Segment stacked>
-            <Form.Input 
-                fluid icon='user' 
-                iconPosition='left' 
-                placeholder='Username'
-                type="text"
-				value={this.state.username}
-				onChange={this.handleChange} />
-            <Form.Input
-              fluid
-              icon='lock'
-              iconPosition='left'
-              placeholder='Password'
-              type='password'
-              value={this.state.password}
-			onChange={this.handleChange}
-            />
+            <LoginForm />
 
             <Button color='teal' fluid size='large'>
               Login

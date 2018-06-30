@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Button, Form, Grid, Header, Image, Icon, Modal, Message, Segment } from 'semantic-ui-react'
 import axios from 'axios'
+import Nav from '../Nav'
 
 
 
@@ -24,16 +25,35 @@ class LoginForm extends Component {
 		})
 	}
 
-	
+	_login(username, password) {
+		axios
+			.post('/auth/login', {
+				username,
+				password
+			})
+			.then(response => {
+				console.log(response)
+				if (response.status === 200) {
+					// update the state
+					this.setState({
+						loggedIn: true,
+						user: response.data.user
+					})
+				}
+			})
+	}
 
 	handleSubmit(event) {
 		event.preventDefault()
 		console.log('handleSubmit')
-		this.props._login(this.state.username, this.state.password)
+		this._login(this.state.username, this.state.password)
+		console.log(this.state.username)
 		this.setState({
 			redirectTo: '/'
 		})
 	}
+
+	
 
 
 

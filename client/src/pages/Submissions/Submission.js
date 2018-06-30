@@ -7,9 +7,13 @@ import { Container } from "../../components/Grid";
 class Submissions extends Component {
   state = {
     submission: []
+    
+
   }; 
+
   componentDidMount() {
     this.getSubmissions();
+    console.log(this.Submissions)
   }
 
   getSubmissions = () => 
@@ -25,6 +29,7 @@ render() {
     
       topic={Submissions.topic}
       language={Submissions.language}
+      
     />
     </Container>
   )
