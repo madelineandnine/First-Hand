@@ -8,13 +8,14 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
+const path = require('path');
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const dbConnection = require('./db') // loads our connection to the mongo database
 const passport = require('./passport')
 const app = express()
 const PORT = process.env.PORT || 8080
-const router = require('express').Router()
+const apiRouter = require('./routes/api');
 
 // ===== Middleware ====
 app.use(morgan('dev'))
@@ -72,7 +73,7 @@ if (process.env.NODE_ENV === 'production') {
 /* Express app ROUTING */
 app.use('/auth', require('./auth'))
 
-app.use('/api', router);
+app.use('/api', apiRouter);
 
 
 // ====== Error handler ====

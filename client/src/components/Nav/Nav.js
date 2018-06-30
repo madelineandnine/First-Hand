@@ -49,6 +49,10 @@ const DisplayLinks = props => {
 		)
 	} else {
 		return (
+<<<<<<< HEAD
+=======
+			<div className="main">
+>>>>>>> master
 			<nav className="navbar">
 				<ul className="nav">
 					<li className="nav-item">
