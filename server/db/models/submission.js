@@ -7,6 +7,6 @@ const submitSchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const submission = mongoose.model("Submission", submitSchema);
+const Submission = mongoose.model("Submission", submitSchema);
 
-module.exports = submission;
+module.exports = Submission;
