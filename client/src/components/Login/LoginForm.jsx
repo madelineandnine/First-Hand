@@ -49,7 +49,7 @@ class LoginForm extends Component {
 		this._login(this.state.username, this.state.password)
 		console.log(this.state.username)
 		this.setState({
-			redirectTo: '/'
+			redirectTo: '/api/submissions'
 		})
 	}
 
