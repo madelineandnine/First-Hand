@@ -33,6 +33,13 @@ const DisplayLinks = props => {
 	if (props.loggedIn) {
 		return (
 			<nav className="navbar">
+				<Menu.Item position='right'>
+				  		<LoginModal style={{ marginLeft: '0.5em' }}/>
+						  <SignupModal style={{ marginLeft: '0.5em' }}/>
+				  <Button as='a' href="#" style={{ marginLeft: '0.5em' }} onClick={props._logout}>
+                    Logout
+                  </Button>
+                </Menu.Item>
 				<ul className="nav">
 					<li className="nav-item">
 						<Link to="/" className="nav-link">
@@ -49,10 +56,8 @@ const DisplayLinks = props => {
 		)
 	} else {
 		return (
-<<<<<<< HEAD
-=======
+
 			<div className="main">
->>>>>>> master
 			<nav className="navbar">
 				<ul className="nav">
 					<li className="nav-item">
@@ -153,10 +158,12 @@ class Nav extends Component {
 							_login={this._login}
 						/>}
 				/>
+
+				<Route exact path="/signup" component={SignupModal} />
 				<Route exact path="/signup" component={SignupForm} />
 				<Route exact path="/api/submissions" component={Submissions} />
 
-				{/* <LoginForm _login={this._login} /> */}
+
 
 				
 			</div>
