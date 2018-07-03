@@ -38,7 +38,6 @@ const DisplayLinks = props => {
 				
 				  		<LoginModal style={{ marginLeft: '0.5em' }}/>
 						<SignupModal style={{ marginLeft: '0.5em' }}/>
-						<Submissions />
 				  <Button as='a' href="#" style={{ marginLeft: '0.5em' }} onClick={props._logout}>
                     Logout
                   </Button>
@@ -146,8 +145,7 @@ class App extends Component {
 						/>}
 				/>
 				<Route exact path="/signup" component={SignupModal} />
-				<Route exact path="/api/submissions" component={Submissions} />
-
+				
 				{/* <LoginForm _login={this._login} /> */}
 
 				
