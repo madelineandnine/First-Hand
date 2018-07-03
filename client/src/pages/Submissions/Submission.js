@@ -6,35 +6,25 @@ import { Container } from "../../components/Grid";
 
 class Submissions extends Component {
   state = {
-<<<<<<< HEAD
-    submission: []
-    
-
-=======
     submission: [],
     topic: "",
     language: "",
     date: "",
->>>>>>> master
   }; 
 
   componentDidMount() {
-<<<<<<< HEAD
-    this.getSubmissions();
+    this.getSubmissions(); 
     console.log(this.Submissions)
   }
-
-  getSubmissions = () => 
-=======
-    // this.getSubmissions();
->>>>>>> master
-    API.getSubmissions()
+   
+  getSubmissions = () => {
+     API.getSubmissions()
       .then(res => {
         console.log(res.data);
       })
       .then(res => this.setState({ submission: res.data }))
       .catch(err => console.log(err))
-  }
+  } 
 
   // getSubmissions = () => 
     

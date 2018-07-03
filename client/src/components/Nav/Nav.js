@@ -35,40 +35,46 @@ const DisplayLinks = props => {
 			<nav className="navbar">
 				<ul className="nav">
 					<li className="nav-item">
+					<Button>
 						<Link to="/" className="nav-link">
 							Home
 						</Link>
+						</Button>
 					</li>
 					<li>
+						<Button> 
 						<Link to="#" className="nav-link" onClick={props._logout}>
 							Logout
 						</Link>
+						</Button>
 					</li>
 				</ul>
 			</nav>
 		)
 	} else {
 		return (
-<<<<<<< HEAD
-=======
-			<div className="main">
->>>>>>> master
 			<nav className="navbar">
 				<ul className="nav">
 					<li className="nav-item">
+					<Button>
 						<Link to="/" className="nav-link">
 							Home
 						</Link>
+						</Button>
 					</li>
 					<li className="nav-item">
+					<Button>
 						<Link to="/login" className="nav-link">
-							login
+							Login
 						</Link>
+						</Button>
 					</li>
 					<li className="nav-item">
+					<Button>
 						<Link to="/signup" className="nav-link">
-							sign up
+							Sign Up
 						</Link>
+						</Button>
 					</li>
 				</ul>
 			</nav>
