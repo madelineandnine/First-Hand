@@ -16,37 +16,10 @@ export default class Submissions extends Component {
       date: "",
     }
   }
-/* 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  getSubmissions = () => {
-    API.getSubmissions({
-      topic: this.state.topic,
-      language: this.state.language,
-      date: this.state.date
-    })
-      .then(res =>
-        this.setState({
-          submission: res.data
-        })
-      )
-      .catch(err => console.log(err));
-  };
-
- 
-  };
- */
-
 
 
 
   componentDidMount() {
-    // this.getSubmissions();
     API.getSubmissions()
       .then(res => {
         console.log(res.data);
