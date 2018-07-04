@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { Route, Link } from 'react-router-dom'
 import './Nav.css'
 import LoginForm from '../Login/LoginForm'
-import LoginFormTest from '../Login/logintestform'
 import LoginModal from '../Login/LoginModal'
 import SignupForm from '../Signup/SignupForm'
 import SignupModal from '../Signup/SignupModal'
@@ -61,7 +60,6 @@ const DisplayLinks = props => {
 	} else {
 		return (
 
-
 			<div className="main">
 			<nav className="navbar">
 				<ul className="nav">
@@ -88,6 +86,7 @@ const DisplayLinks = props => {
 					</li>
 				</ul>
 			</nav>
+			</div>
 		)
 	}
 }
@@ -119,6 +118,7 @@ class Nav extends Component {
 			}
 		})
 	}
+
 
 	_logout(event) {
 		event.preventDefault()
@@ -170,7 +170,6 @@ class Nav extends Component {
 						/>}
 				/>
 
-				<Route exact path="/signup" component={SignupModal} />
 				<Route exact path="/signup" component={SignupForm} />
 				<Route exact path="/api/submissions" component={Submissions} />
 

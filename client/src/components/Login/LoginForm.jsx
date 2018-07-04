@@ -6,6 +6,7 @@ import Nav from '../Nav'
 
 
 
+
 class LoginForm extends Component {
 	constructor() {
 		super()
@@ -53,34 +54,47 @@ class LoginForm extends Component {
 		})
 	}
 
-	
-
-
 
 	render() {
 		if (this.state.redirectTo) {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		} else {
 			return (
-				<div className="LoginForm">
-					
-					<form>
-						<label htmlFor="username">Username: </label>
+				<div className="login-form">
+				<Grid textAlign='center' style={{ height: '100%' }} >
+      				<Grid.Column style={{ maxWidth: 450 }}>
+					<Header as='h2' color='teal' textAlign='center'>
+          				Login to your Account
+       				</Header>
+					<Form size='large'>
+					<Segment stacked>
+						<Form.Field>
+						<label htmlFor="username">Username </label>
 						<input
 							type="text"
 							name="username"
 							value={this.state.username}
 							onChange={this.handleChange}
 						/>
-						<label htmlFor="password">Password: </label>
+						</Form.Field>
+						<Form.Field>
+						<label htmlFor="password">Password </label>
 						<input
 							type="password"
 							name="password"
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
-						<button onClick={this.handleSubmit}>Login</button>
-					</form>
+						</Form.Field>
+						<Button color='teal' style={{ margin: '10px' }}onClick={this.handleSubmit}>Login</Button>
+						</Segment>
+					</Form>
+					<Message>
+          New to us? <a href='/signup'>Sign Up</a>
+        </Message>
+      </Grid.Column>
+    </Grid>
+	
 					
 				</div>
 			)
