@@ -18,15 +18,19 @@ export default class Submissions extends Component {
   }
 
 
+
   componentDidMount() {
-    // this.getSubmissions();
-    API.getSubmissions().then(res => {
-      console.log(res.data);
-      const submission = res.data;
-      this.setState({ submission });
-      console.log({ submission });
-    });
-  }
+    API.getSubmissions()
+      .then(res => {
+        console.log(res.data);
+        const submission = res.data;
+        this.setState({ submission })
+        console.log({ submission })
+      });
+  } 
+  
+
+
 
   render() {
     return (
@@ -61,6 +65,7 @@ export default class Submissions extends Component {
         <h2 className="text-center"></h2>
       )}
     </SubmissionCard> */
-    );
-  }
-}
+
+    )  
+};
+}; 
