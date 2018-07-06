@@ -13,18 +13,8 @@ import Home from '../Home'
 import Submissions from '../../pages/Submissions'
 import {
 	Button,
-	Divider,
-	Grid,
 	Header,
-	Icon,
-	Image,
-	List,
-	Modal,
 	Menu,
-	Responsive,
-	Segment,
-	Sidebar,
-	Visibility,
 	} from 'semantic-ui-react'
 import styled from 'styled-components'
 
