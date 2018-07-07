@@ -16,7 +16,7 @@ const Submission = [
     topic: "Women's Healthcare",
     pullquote: "Protect every woman's right, my family depends on it",
     language:
-      "I am pro-choice about abortion and birth control and I urge you to do all in your power to protect every woman's right to choose abortion, and birth control, and safe sex regardless of her age, income, or the state in which she lives. I trust women to make these decisions and I trust women to decide when to involve others in her choices. I agree with legislative proposals for contraceptive equity. These bills are designed to make sure that health plans and insurance policies cover prescriptions for birth control equally with other types of prescriptions. Women spend more time and money on pregnancy prevention and pregnancy during their lifetimes than any other health care.",
+      "Heart Felt Quote Here",
     date: new Date(Date.now()),
   },
   {

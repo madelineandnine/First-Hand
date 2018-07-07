@@ -1,5 +1,5 @@
 import React from "react";
-import ListItem from "../../components/List/ListItem"
+import './List.css';
 
 export const List = ({ children }) => (
   <ul className="list-group">

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import './signup.css'
