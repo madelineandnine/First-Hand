@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { Container } from "../../components/Grid";
 import { List } from "../../components/List/List";
 import { ListItem } from "../../components/List/ListItem"
+import SubNav from '../../components/SubNav'
 
 
 
@@ -36,7 +37,9 @@ export default class Submissions extends Component {
   
 render() {
 return (
+
   <Container fluid>
+    <SubNav />
   <List>
   {this.state.submission.map(submission => (
             <ListItem key={submission._id}
@@ -49,6 +52,7 @@ return (
           ))}
   </List>
   </Container>
+  
  /*  return <SubmissionCard title="Results">
       {this.state.submission.length ? (
         <List>

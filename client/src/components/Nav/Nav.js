@@ -32,13 +32,7 @@ const DisplayLinks = props => {
 	if (props.loggedIn) {
 		return (
 			<nav className="navbar">
-				<Menu.Item position='right'>
-				  		<LoginModal style={{ marginLeft: '0.5em' }}/>
-						  <SignupModal style={{ marginLeft: '0.5em' }}/>
-				  <Button as='a' href="#" style={{ marginLeft: '0.5em' }} onClick={props._logout}>
-                    Logout
-                  </Button>
-                </Menu.Item>
+				
 				<ul className="nav">
 					<li className="nav-item">
 					<Button>
@@ -49,7 +43,7 @@ const DisplayLinks = props => {
 					</li>
 					<li>
 						<Button> 
-						<Link to="#" className="nav-link" onClick={props._logout}>
+						<Link to="/" className="nav-link" onClick={props._logout}>
 							Logout
 						</Link>
 						</Button>

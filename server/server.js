@@ -18,6 +18,7 @@ const PORT = process.env.PORT || 8080
 const apiRouter = require('./routes/api');
 
 // ===== Middleware ====
+console.log('server.js is running')
 app.use(morgan('dev'))
 app.use(
 	bodyParser.urlencoded({
