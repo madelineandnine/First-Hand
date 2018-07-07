@@ -1,3 +1,4 @@
+
 // Libraries
 import React, { Component } from 'react';
 import API from '../../utils/API';
@@ -15,6 +16,7 @@ import {
   RedditShareButton,
 } from 'react-share';
 import { FacebookIcon, TwitterIcon, RedditIcon } from 'react-share';
+import SubNav from '../../components/SubNav';
 
 // Creates/exports 'Submissions' as stateful component with empty array
 export default class Submissions extends Component {
@@ -38,10 +40,12 @@ export default class Submissions extends Component {
     });
   }
 
+
   // Renders database as list on page with social media share buttons
   render() {
     return (
       <Container fluid>
+        <SubNav />
         <List>
           {this.state.submission.map(submission => (
             <ListItem

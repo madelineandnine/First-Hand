@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { Route, Link } from 'react-router-dom'
 import './Nav.css'
 import LoginForm from '../Login/LoginForm'
-import LoginFormTest from '../Login/logintestform'
 import LoginModal from '../Login/LoginModal'
 import SignupForm from '../Signup/SignupForm'
 import SignupModal from '../Signup/SignupModal'
@@ -23,13 +22,7 @@ const DisplayLinks = props => {
 	if (props.loggedIn) {
 		return (
 			<nav className="navbar">
-				<Menu.Item position='right'>
-				  		<LoginModal style={{ marginLeft: '0.5em' }}/>
-						  <SignupModal style={{ marginLeft: '0.5em' }}/>
-				  <Button as='a' href="#" style={{ marginLeft: '0.5em' }} onClick={props._logout}>
-                    Logout
-                  </Button>
-                </Menu.Item>
+				
 				<ul className="nav">
 					<li className="nav-item">
 					<Button>
@@ -40,7 +33,7 @@ const DisplayLinks = props => {
 					</li>
 					<li>
 						<Button> 
-						<Link to="#" className="nav-link" onClick={props._logout}>
+						<Link to="/" className="nav-link" onClick={props._logout}>
 							Logout
 						</Link>
 						</Button>
@@ -50,7 +43,6 @@ const DisplayLinks = props => {
 		)
 	} else {
 		return (
-
 
 			<div className="main">
 			<nav className="navbar">
@@ -111,6 +103,7 @@ class Nav extends Component {
 		})
 	}
 
+
 	_logout(event) {
 		event.preventDefault()
 		console.log('logging out')
@@ -161,7 +154,6 @@ class Nav extends Component {
 						/>}
 				/>
 
-				<Route exact path="/signup" component={SignupModal} />
 				<Route exact path="/signup" component={SignupForm} />
 				<Route exact path="/api/submissions" component={Submissions} />
 

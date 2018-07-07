@@ -8,5 +8,8 @@ export default {
     }, 
     loadSubmission: function(id) {
         return axios.get("api/submissions/" + id); 
+    },
+    addSubmission: function(topic, language, date) {
+        return axios.post("/api/submissions");
     }
 }; 

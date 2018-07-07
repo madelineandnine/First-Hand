@@ -33,7 +33,7 @@ class SignupForm extends Component {
 				if (!response.data.errmsg) {
 					console.log('youre good')
 					this.setState({
-						redirectTo: '/login'
+						redirectTo: '/api/submissions'
 					})
 				} else {
 					console.log('duplicate')
@@ -46,28 +46,48 @@ class SignupForm extends Component {
 		}
 		return (
 			 <div className="login-form">
-				<label htmlFor="username">Username: </label>
+			 <Grid textAlign='center' style={{ height: '100%' }}> 
+      				<Grid.Column style={{ maxWidth: 450 }}>
+					<Header as='h2' color='teal' textAlign='center'>
+          				Create an Account
+       				</Header>
+					<Form size='large'>
+					<Segment>
+						<Form.Field>
+				<label htmlFor="username">Username </label>
 				<input
 					type="text"
 					name="username"
 					value={this.state.username}
 					onChange={this.handleChange}
 				/> 
-				<label htmlFor="password">Password: </label> 
+				</Form.Field>
+				<Form.Field>
+				<label htmlFor="password">Password </label> 
 				<input
 					type="password"
 					name="password"
 					value={this.state.password}
 					onChange={this.handleChange}
 				/> 
-				<label htmlFor="confirmPassword">Confirm Password: </label>
+				</Form.Field>
+				<Form.Field>
+				<label htmlFor="confirmPassword">Confirm Password </label>
 				<input
 					type="password"
 					name="confirmPassword"
 					value={this.state.confirmPassword}
 					onChange={this.handleChange}
 				/>
-				<button onClick={this.handleSubmit}>Sign up</button>
+				</Form.Field>
+				<Button color='teal' style={{ margin: '10px' }} onClick={this.handleSubmit}>Sign up</Button>
+				</Segment>
+					</Form>
+					<Message>
+          Already have an account? <a href='/login'>Login</a>
+        </Message>
+					</Grid.Column>
+    </Grid>
 			</div> 
 		)
 	}
