@@ -28,7 +28,7 @@
 	},
 	"scripts": {
 		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-		"start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+		"start:dev": "concurrently \"cd server && nodemon server.js --ignore 'client/*'\" \"npm run client\"",
 		"client": "cd client && npm run start",
 		"install": "cd client && yarn install;",
 		"build": "react-scripts build",

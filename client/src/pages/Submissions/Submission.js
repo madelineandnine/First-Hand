@@ -59,7 +59,7 @@ export default class Submissions extends Component {
                 <strong> " </strong> {submission.language} <strong> " </strong>
               </h1>
               <h4> Date Published: {submission.date} </h4>
-              <div class="inlineButtons">
+              <div className="inlineButtons">
                 <FacebookShareButton
                   className="shareButtons"
                   url="www.facebook.com"
