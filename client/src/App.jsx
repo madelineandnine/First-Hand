@@ -1,9 +1,11 @@
+// Libraries
+import React from 'react';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
-import React from 'react'
-import { Route, Router, Switch } from 'react-router-dom'
-import HomepageLayout from './components/Home'
-import { LoginForm }  from './components/Login'
-import { SignupForm }  from './components/Signup'
+// Components
+import HomepageLayout from './components/Home';
+import LoginForm  from './components/Login/LoginForm'
+import SignupForm  from './components/Signup/SignupForm'
 import Submissions from './pages/Submissions'
 
 const App  = () => (

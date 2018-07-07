@@ -1,11 +1,22 @@
+// Libraries
 import React, { Component } from 'react';
 import API from '../../utils/API';
+
+// Components
 import { Container } from '../../components/Grid';
 import { List } from '../../components/List/List';
 import { ListItem } from '../../components/List/ListItem';
 import { Button } from 'semantic-ui-react';
+import Nav from '../../components/Nav';
 import styled from 'styled-components';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  RedditShareButton,
+} from 'react-share';
+import { FacebookIcon, TwitterIcon, RedditIcon } from 'react-share';
 
+// Creates/exports 'Submissions' as stateful component with empty array
 export default class Submissions extends Component {
   constructor(props) {
     super(props);
@@ -17,55 +28,63 @@ export default class Submissions extends Component {
     };
   }
 
-
-
+  // Uses API to get data from database and fill empty array
   componentDidMount() {
-    API.getSubmissions()
-      .then(res => {
-        console.log(res.data);
-        const submission = res.data;
-        this.setState({ submission })
-        console.log({ submission })
-      });
-  } 
-  
+    API.getSubmissions().then(res => {
+      console.log(res.data);
+      const submission = res.data;
+      this.setState({ submission });
+      console.log({ submission });
+    });
+  }
 
-
-
+  // Renders database as list on page with social media share buttons
   render() {
     return (
       <Container fluid>
         <List>
           {this.state.submission.map(submission => (
-            <ListItem key={submission._id} _id={submission._id}>
-              <h1> A Story About: {submission.topic} </h1>
-              <p> {submission.language} </p>
+            <ListItem
+              key={submission._id}
+              _id={submission._id}
+              className="whiteText"
+            >
+              <h2 className="whiteText"> A Story About: {submission.topic} </h2>
+              <h1>
+                {' '}
+                <strong> " </strong> {submission.language} <strong> " </strong>
+              </h1>
               <h4> Date Published: {submission.date} </h4>
-              <Button>Share Me!</Button>
+              <div class="inlineButtons">
+                <FacebookShareButton
+                  className="shareButtons"
+                  url="www.facebook.com"
+                  quote={submission.topic}
+                >
+                  <FacebookIcon size={32} round={true} />
+                </FacebookShareButton>
+
+                <TwitterShareButton
+                  className="shareButtons"
+                  url="www.facebook.com"
+                  quote={submission.topic}
+                >
+                  <TwitterIcon size={32} round={true} />
+                </TwitterShareButton>
+
+                <RedditShareButton
+                  className="shareButtons"
+                  url="www.facebook.com"
+                  quote={submission.topic}
+                >
+                  <RedditIcon size={32} round={true} />
+                </RedditShareButton>
+                <Button id="submissionButton">Get More Here</Button>
+              </div>
             </ListItem>
           ))}
         </List>
       </Container>
-      /*  return <SubmissionCard title="Results">
-      {this.state.submission.length ? (
-        <List>
-          {this.state.submission.map(submission => (
-            <ListItem
-              key={submission._id}
-              _id={submission._id}
-              title={submission.topic}
-              language={submission.language}
-              date={submission.date}
-              handleClick={this.handleArticleSave}
-              buttonText="Save Article"
-            />
-          ))}
-        </List>
-      ) : (
-        <h2 className="text-center"></h2>
-      )}
-    </SubmissionCard> */
-
-    )  
-};
-}; 
+    );
+  }
+}
