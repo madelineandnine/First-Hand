@@ -14,7 +14,6 @@ const SubNav = () => (
 
     <Menu.Item>
           <SubmitModal />
-       
     </Menu.Item>
   </Menu>
   </div>

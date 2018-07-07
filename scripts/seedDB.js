@@ -29,7 +29,7 @@ const Submission = [
   {
     topic: 
         "EPA's Budget",
-    pullquote: 'The Environment needs a voice.'
+    pullquote: 'The Environment needs a voice.',
     language:
         "I am writing to ask you to reject President Trump's fiscal year 2019 proposal to slash EPA's budget by approximately 23 percent and cut essential staff. The President's proposal could have a devastating impact on New York's water, air and public health. For just 0.21% of the federal budget, the EPA yields tremendous environmental, health and economic benefits for the people of New York and the United States. Congress should reject the administration's proposal to slash programs and EPA's public servants. I refuse to go back to the days when the Hudson River was treated like an open sewer and polluters were unaccountable to the American people. A strong EPA is in the best interest of your constituents. Be a hero for New York's environment and oppose President Trump and Scott Pruitt's budget request to dismantle the EPA. ",
     date: new Date(Date.now()),

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import './signup.css'
+import { Grid, Header, Form, Segment, Button, Message } from 'semantic-ui-react'
 
 class SignupForm extends Component {
 	constructor() {
