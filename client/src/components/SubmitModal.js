@@ -100,7 +100,7 @@ class SubmitModal extends Component {
 						</Form.Field>
                         <Form.TextArea name='language' label='language' type="text" value={this.state.language} onChange={this.handleChange} />
 
-					 <Button color='teal' style={{ margin: '10px' }}onClick={this.handleSubmit}>Submit</Button> 
+					 <Button color='teal' style={{ margin: '10px' }} onClick={this.handleSubmit}>Submit</Button> 
                     </Form>
             </Modal.Content>
           {/* <Modal.Actions>

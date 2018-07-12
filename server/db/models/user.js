@@ -9,7 +9,8 @@ const userSchema = new Schema({
 	lastName: { type: String, unique: false },
 	local: {
 		username: { type: String, unique: false, required: false },
-		password: { type: String, unique: false, required: false }
+		password: { type: String, unique: false, required: false },
+		zipcode: { type: Number, unique: false, required: false}
 	},
 	google: {
 		googleId: { type: String, required: false }

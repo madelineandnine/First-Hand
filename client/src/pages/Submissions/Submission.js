@@ -2,6 +2,8 @@
 // Libraries
 import React, { Component } from 'react';
 import API from '../../utils/API';
+import Moment from 'react-moment';
+
 
 // Components
 import { Container } from '../../components/Grid';
@@ -12,6 +14,8 @@ import Nav from '../../components/Nav';
 import styled from 'styled-components';
 import {
   FacebookShareButton,
+  FacebookShareCount,
+  RedditShareCount,
   TwitterShareButton,
   RedditShareButton,
 } from 'react-share';
@@ -41,6 +45,7 @@ export default class Submissions extends Component {
   }
 
 
+
   // Renders database as list on page with social media share buttons
   render() {
     return (
@@ -58,7 +63,7 @@ export default class Submissions extends Component {
                 {' '}
                 <strong> " </strong> {submission.language} <strong> " </strong>
               </h1>
-              <h4> Date Published: {submission.date} </h4>
+              <h4> Date Published: <Moment format="MM-DD-YYYY">{submission.date}</Moment> </h4>
               <div className="inlineButtons">
                 <FacebookShareButton
                   className="shareButtons"
