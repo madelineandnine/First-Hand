@@ -16,6 +16,8 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 import Nav from './Nav'
+import background from './Images/background.jpg'
+
 
 
 const HomepageHeading = ({ mobile }) => (
@@ -29,18 +31,31 @@ const HomepageHeading = ({ mobile }) => (
         fontWeight: 'normal',
         marginBottom: 0,
 				marginTop: mobile ? '1.5em' : '3em',
-				fontFamily: 'Raleway',
+        fontFamily: 'Raleway'
       }}
     />
-    <Header
+    {/* <Header
       as='h2'
-      content='The Issues Just Got Personal'
+      content='Bring the Issues Home'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
         fontFamily: 'Raleway',
+
+      }}
+    /> */}
+        <Header
+      as='h4'
+      content='find stories and letters to put a face to current events'
+      inverted
+      style={{
+        fontSize: mobile ? '1.2em' : '1.5em',
+        fontWeight: 'normal',
+        marginTop: mobile ? '0.5em' : '1.5em',
+        fontFamily: 'Raleway',
+        fontStyle: 'italic',
 
       }}
     />

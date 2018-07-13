@@ -13,7 +13,8 @@ class SubmitModal extends Component {
             topic: "",
             pullquote: "",
             language: "",
-            date: "",
+						date: "",
+						open: false,
 		}
 		// this.googleSignin = this.googleSignin.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,7 +27,7 @@ class SubmitModal extends Component {
 		})
 	}
     componentDidMount() {
-        API.addSubmission()
+        API.getSubmissions()
           .then(res => {
             console.log(res.data);
             const submission = res.data;
@@ -36,7 +37,7 @@ class SubmitModal extends Component {
       } 
 	_create(topic, pullquote, language, date) {
 		axios
-			.post('/api/submission', {
+			.post('/api/submissions', {
                 topic, 
                 pullquote, 
                 language, 
@@ -53,8 +54,8 @@ class SubmitModal extends Component {
 			})
 	}
 
-	handleSubmit(event) {
-		event.preventDefault()
+	handleSubmit = (event) => {
+		// event.preventDefault()
 		console.log('handleSubmit')
 		this._create(this.state.topic, this.state.pullquote, this.state.language)
 		console.log(this.state.topic)
@@ -64,7 +65,7 @@ class SubmitModal extends Component {
 	}
 
   
-state = { open: false }
+// state = { open: false }
   show = size => () => this.setState({ size, open: true })
   close = () => this.setState({ open: false })
 
@@ -98,9 +99,9 @@ state = { open: false }
 							onChange={this.handleChange}
 						/>
 						</Form.Field>
-                        <Form.TextArea label='language' placeholder='Tell your story...' value={this.state.language} onChange={this.handleChange} />
-
+                        <Form.TextArea name='language' label='language' type="text" value={this.state.language} onChange={this.handleChange} />
 					 <Button className="submitButton" onClick={this.handleSubmit}>Submit</Button> 
+
                     </Form>
             </Modal.Content>
           {/* <Modal.Actions>

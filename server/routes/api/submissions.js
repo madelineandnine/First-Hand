@@ -8,9 +8,15 @@ router
   .post(submissionController.create);
 
 router
+  .route("/search/:topic")
+  .get(submissionController.search); 
+
+router
   .route("/:id")
   .get(submissionController.findById)
   .put(submissionController.update)
   .delete(submissionController.remove);
+
+
 
 module.exports = router;

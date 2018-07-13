@@ -13,12 +13,15 @@
 		"express": "^4.15.3",
 		"express-session": "^1.15.4",
 		"if-env": "^1.0.4",
+		"lodash": "^4.17.10",
+		"moment": "^2.22.2",
 		"mongoose": "^4.11.4",
 		"morgan": "^1.8.2",
 		"passport": "^0.3.2",
 		"passport-google-oauth": "^1.0.0",
 		"passport-google-oauth20": "^1.0.0",
 		"passport-local": "^1.0.0",
+		"react-moment": "^0.7.9",
 		"react-share": "^2.2.0"
 	},
 	"devDependencies": {
@@ -28,7 +31,8 @@
 	},
 	"scripts": {
 		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-		"start:dev": "concurrently \"nodemon server.js --ignore 'client/*'\" \"npm run client\"",
+		"start:dev": "concurrently \"nodemon --ignore 'client/**/*'\" \"npm run client\"",
+		"start:prod": "node server/server.js",
 		"client": "cd client && npm run start",
 		"install": "cd client && yarn install;",
 		"build": "react-scripts build",
