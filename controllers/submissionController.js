@@ -33,5 +33,13 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  }, 
+  search: function(req, res) {
+    const pattern = new RegExp(`^${req.params.topic}`, 'i');
+
+    db.Submission
+    .distinct('topic', { topic: pattern })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err)); 
   }
 };

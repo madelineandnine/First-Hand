@@ -7,7 +7,7 @@ import SearchStandard from '../Search'
 
 
 
-const SubNav = () => (
+const SubNav = (props) => (
     <div className = "ui top fixed menu">
   <Menu>
     <Menu.Item>
@@ -21,7 +21,7 @@ const SubNav = () => (
       <InvolveModal />
     </Menu.Item>
     <Menu.Item>
-      <SearchStandard />
+      <SearchStandard onResultSelect={props.onResultSelect} />
     </Menu.Item>
 
   </Menu>

@@ -21,6 +21,7 @@ import {
 } from 'react-share';
 import { FacebookIcon, TwitterIcon, RedditIcon } from 'react-share';
 import SubNav from '../../components/SubNav';
+import ExpandModal from '../../components/ExpandModal'
 
 // Creates/exports 'Submissions' as stateful component with empty array
 export default class Submissions extends Component {
@@ -44,13 +45,18 @@ export default class Submissions extends Component {
     });
   }
 
+  handleTopicSelect = (event, { result }) => {
+    API.getSubmissionsByTopic(result.title).then((res) => {
+      this.setState({ submission: res.data });
+    });
+  };
 
 
   // Renders database as list on page with social media share buttons
   render() {
     return (
       <Container fluid>
-        <SubNav />
+        <SubNav onResultSelect={this.handleTopicSelect} />
         <List>
           {this.state.submission.map(submission => (
             <ListItem
@@ -61,7 +67,7 @@ export default class Submissions extends Component {
               <h2 className="whiteText"> A Story About: {submission.topic} </h2>
               <h1>
                 {' '}
-                <strong> " </strong> {submission.language} <strong> " </strong>
+                <strong> " </strong> {submission.pullquote} <strong> " </strong>
               </h1>
               <h4> Date Published: <Moment format="MM-DD-YYYY">{submission.date}</Moment> </h4>
               <div className="inlineButtons">
@@ -88,7 +94,10 @@ export default class Submissions extends Component {
                 >
                   <RedditIcon size={32} round={true} />
                 </RedditShareButton>
-                <Button id="submissionButton">Get More Here</Button>
+               
+                  <ExpandModal submission={submission} />
+               
+                
               </div>
             </ListItem>
           ))}
