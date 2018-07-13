@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Modal } from 'semantic-ui-react'
+import SubmitButton from '../Button/SubmitButton'
 import LoginForm from './LoginForm'
+import './SubmissionModal.css'
 
 class LoginModal extends Component {
   state = { open: false }
@@ -13,7 +15,7 @@ class LoginModal extends Component {
 
     return (
       <div>
-        <Button onClick={this.show('tiny')}></Button>
+        <SubmitButton id="submissionButton" onClick={this.show('tiny')}></SubmitButton>
      
 
         <Modal className="scrolling" size={size} open={open} onClose={this.close}>

@@ -1,0 +1,9 @@
+.submitButton {
+  font-size: 40pt;
+  font-family: 'Contrail One', cursive;
+  color: white;
+  text-transform: uppercase;
+  border: none !important;
+  padding: 5px !important;
+  background-color: none !important;
+}

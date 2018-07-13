@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Modal, Form, TextArea } from 'semantic-ui-react'
+import { SubmitButton } from '../components/Button/SubmitButton'
 import LoginForm from '../components/Login/LoginForm'
 import API from "../utils/API"; 
 import axios from 'axios'
@@ -73,7 +74,7 @@ class SubmitModal extends Component {
 
     return (
       <div>
-        <Button onClick={this.show('tiny')}>Submit</Button>
+        <Button onClick={this.show('tiny')}>Tell Your Story Here! </Button>
      
 
         <Modal className="scrolling" size={size} open={open} onClose={this.close}>
@@ -99,8 +100,8 @@ class SubmitModal extends Component {
 						/>
 						</Form.Field>
                         <Form.TextArea name='language' label='language' type="text" value={this.state.language} onChange={this.handleChange} />
+					 <Button className="submitButton" onClick={this.handleSubmit}>Submit</Button> 
 
-					 <Button color='teal' style={{ margin: '10px' }} onClick={this.handleSubmit}>Submit</Button> 
                     </Form>
             </Modal.Content>
           {/* <Modal.Actions>
