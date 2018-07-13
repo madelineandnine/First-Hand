@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Modal, Form, TextArea } from 'semantic-ui-react'
+import { SubmitButton } from '../components/Button/SubmitButton'
 import LoginForm from '../components/Login/LoginForm'
 import API from "../utils/API"; 
 import axios from 'axios'
@@ -72,7 +73,7 @@ state = { open: false }
 
     return (
       <div>
-        <Button onClick={this.show('tiny')}>Submit</Button>
+        <Button onClick={this.show('tiny')}>Tell Your Story Here! </Button>
      
 
         <Modal className="scrolling" size={size} open={open} onClose={this.close}>
@@ -99,7 +100,7 @@ state = { open: false }
 						</Form.Field>
                         <Form.TextArea label='language' placeholder='Tell your story...' value={this.state.language} onChange={this.handleChange} />
 
-					 <Button color='teal' style={{ margin: '10px' }}onClick={this.handleSubmit}>Submit</Button> 
+					 <Button className="submitButton" onClick={this.handleSubmit}>Submit</Button> 
                     </Form>
             </Modal.Content>
           {/* <Modal.Actions>

@@ -7,9 +7,7 @@ import API from '../../utils/API';
 import { Container } from '../../components/Grid';
 import { List } from '../../components/List/List';
 import { ListItem } from '../../components/List/ListItem';
-import { Button } from 'semantic-ui-react';
-import Nav from '../../components/Nav';
-import styled from 'styled-components';
+//import { Button } from 'semantic-ui-react';
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -17,6 +15,8 @@ import {
 } from 'react-share';
 import { FacebookIcon, TwitterIcon, RedditIcon } from 'react-share';
 import SubNav from '../../components/SubNav';
+import SubmissionPopup from '../../components/Popup'
+//import TabMenu from '../../components/TabMenu/TabMenu.js';
 
 // Creates/exports 'Submissions' as stateful component with empty array
 export default class Submissions extends Component {
@@ -25,6 +25,7 @@ export default class Submissions extends Component {
     this.state = {
       submission: [],
       topic: '',
+      pullquote: '',
       language: '',
       date: '',
     };
@@ -41,6 +42,7 @@ export default class Submissions extends Component {
   }
 
 
+
   // Renders database as list on page with social media share buttons
   render() {
     return (
@@ -51,15 +53,17 @@ export default class Submissions extends Component {
             <ListItem
               key={submission._id}
               _id={submission._id}
-              className="whiteText"
             >
               <h2 className="whiteText"> A Story About: {submission.topic} </h2>
               <h1>
                 {' '}
-                <strong> " </strong> {submission.language} <strong> " </strong>
+                <strong> " </strong> {submission.pullquote} <strong> " </strong>
               </h1>
               <h4> Date Published: {submission.date} </h4>
-              <div class="inlineButtons">
+              <div className="inlineButtons">
+                <SubmissionPopup id="popup-text" content={submission.language}>
+                <div>The rest of my story:</div>
+                </SubmissionPopup>
                 <FacebookShareButton
                   className="shareButtons"
                   url="www.facebook.com"
@@ -83,7 +87,9 @@ export default class Submissions extends Component {
                 >
                   <RedditIcon size={32} round={true} />
                 </RedditShareButton>
-                <Button id="submissionButton">Get More Here</Button>
+          {/*       <Button>
+                  <button id="storyButton">Get More Here</button>
+                    </Button> */}
               </div>
             </ListItem>
           ))}

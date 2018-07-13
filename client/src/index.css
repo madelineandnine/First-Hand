@@ -8,13 +8,26 @@ body {
   width: 100%;
 }
 
-#submissionButton {
+#storyButton {
   display: inline-block !important;
-  margin-left: 60%;
-  margin-top: -5px;
+  margin-left: 50% !important;
+  margin-bottom: 1% !important;
+  margin-top: 0px !important;
+  background-color: #428bca !important;
+  font-size: 24px !important;
+  padding: 15px 0px !important;
+  width: 300px !important;
 }
 
 .shareButtons {
   display: inline-block !important;
   margin: 10px 5px 5px 5px;
+}
+
+.social-icon {
+  margin-top: 15px;
+}
+
+#popup-text {
+  color: black;
 }

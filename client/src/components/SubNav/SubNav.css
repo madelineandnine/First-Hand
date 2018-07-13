@@ -1,0 +1,46 @@
+#navBar {
+    background-color: #d30b0d !important;
+    height: 100px;
+}
+.ui.menu {
+    background-color: #d30b0d !important;
+    border: 0px !important;
+    width: 100% !important;
+}
+ 
+button, .item.submitButton {
+    font-size: 40pt !important;
+    font-family: 'Contrail One', cursive !important;
+    color: white !important;
+    text-transform: uppercase !important;
+    border: none !important;
+    padding: 5px !important;
+    background-color: #d30b0d !important;
+    margin-left: 19% !important;
+    width: 500px;
+  }
+  
+
+
+.navButton {
+    padding: 0 !important;
+    background-color: #d30b0d !important;
+    border: 0px !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+
+.ui.menu .item:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    height: 0px;
+    width: 0px !important;
+}
+
+.ui.menu {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
