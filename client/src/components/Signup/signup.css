@@ -1,5 +1,10 @@
 .login-form {
-    font-family: 'Raleway', sans-serif; 
+    font-family: 'Open Sans', sans-serif; 
     padding: 5px; 
     height: 250px; 
+}
+
+.ui.form .field>label {
+    color: white !important;
+    font-weight: 400 !important;
 }

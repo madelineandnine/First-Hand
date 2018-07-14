@@ -1,41 +1,55 @@
 
+//Components
 import React, { Component } from 'react'
 import { Button, Menu } from 'semantic-ui-react'
 import { Route, Link } from 'react-router-dom'
 import SubmitModal from '../SubmitModal'
 import InvolveModal from '../InvolveModal'
 import SearchStandard from '../Search'
+import styled from 'styled-components';
 
-
-//Components
-import { Button, Menu } from 'semantic-ui-react';
-import { Route, Link } from 'react-router-dom';
-import SubmitModal from '../SubmitModal';
-import './SubNav.css';
-
-
+const StyledMenu = styled.menu `
+ &&&  {
+  background-color: #d30b0d;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin: 0px;
+ }
+`
+/* 
+const StyledSearchStandard = styled(div) `
+&&& {
+  postion: absolute;
+  right: 0;
+}
+` */
 
 // Creates a sticky 'SubNav' component w/ links to submit to database and to logout of app
-const SubNav = (props) => (
+ const SubNav = (props) => (
     <div className = "ui top fixed menu">
-  <Menu>
+  <StyledMenu>
     <Menu.Item className="navButton">
       <Button href='/' primary>Logout</Button>
     </Menu.Item>
 
-    <Menu.Item className="submitButton">
+    <Menu.Item className="submitButton" id="submit-button">
           <SubmitModal />
     </Menu.Item>
     <Menu.Item>
       <InvolveModal />
     </Menu.Item>
-    <Menu.Item>
+    <Menu.Item className="searchBar">
       <SearchStandard onResultSelect={props.onResultSelect} />
     </Menu.Item>
-
-  </Menu>
+  </StyledMenu>
   </div>
 )
 
-// Exports SubNav component
-export default SubNav
+
+
+export default SubNav;
+
+
+
+

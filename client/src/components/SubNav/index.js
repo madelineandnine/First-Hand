@@ -1,1 +1,2 @@
-export { default } from "./SubNav"; 
+export { StyledSubNav } from "./SubNav"; 
+// export { ColorChanger } from "./ColorChanger";

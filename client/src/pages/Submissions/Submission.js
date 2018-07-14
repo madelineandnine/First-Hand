@@ -12,14 +12,12 @@ import { ListItem } from '../../components/List/ListItem';
 //import { Button } from 'semantic-ui-react';
 import {
   FacebookShareButton,
-  FacebookShareCount,
-  RedditShareCount,
   TwitterShareButton,
   RedditShareButton,
 } from 'react-share';
 import { FacebookIcon, TwitterIcon, RedditIcon } from 'react-share';
-import SubNav from '../../components/SubNav';
-import ExpandModal from '../../components/ExpandModal'
+import StyledSubNav from '../../components/SubNav/SubNav';
+import ExpandModal from '../../components/ExpandModal';
 
 
 // Creates/exports 'Submissions' as stateful component with empty array
@@ -57,7 +55,8 @@ export default class Submissions extends Component {
   render() {
     return (
       <Container fluid>
-        <SubNav onResultSelect={this.handleTopicSelect} />
+       <StyledSubNav onResultSelect={this.handleTopicSelect} />
+        {/* <SubNav onResultSelect={this.handleTopicSelect} /> */}
         <List>
           {this.state.submission.map(submission => (
             <ListItem
