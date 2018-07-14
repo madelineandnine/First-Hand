@@ -132,7 +132,7 @@ class SubmitModal extends Component {
 							onChange={this.handleChange}
 						/>
 						</Form.Field>
-                        <Form.TextArea name='language' label='language' type="text" value={this.state.language} onChange={this.handleChange} />
+                        <Form.TextArea name='Language' label='Your Story' type="text" value={this.state.language} onChange={this.handleChange} />
 					 <StyledButton className="submitButton" onClick={this.handleSubmit}>Submit</StyledButton> 
 
                     </RedForm>
