@@ -1,12 +1,7 @@
 import _ from 'lodash'
 import API from '../utils/API'
 import React, { Component } from 'react'
-import { Search, Grid, Header, Segment } from 'semantic-ui-react'
-
- const source = _.times(5, () => ({
-  topic: API.topic,
- 
-}))
+import { Search } from 'semantic-ui-react'
 
 
 
@@ -60,10 +55,9 @@ export default class SearchStandard extends Component {
     })
   }
 
-
-
   render() {
     const { isLoading, value, results } = this.state
+
     return (
       
           <Search
@@ -73,7 +67,6 @@ export default class SearchStandard extends Component {
             results={results}
             value={value}
             {...this.props}
-            className="searchBar"
           />
        /*  </Grid.Column>
         <Grid.Column width={10}>

@@ -105,7 +105,7 @@ class SubmitModal extends Component {
 
     return (
       <div>
-        <Button onClick={this.show('tiny')}>Tell Your Story Here! </Button>
+         <StyledButton onClick={this.show('tiny')}>Tell Your Story Here! </StyledButton>
      
 
         <StyledModal className="scrolling" size={size} open={open} onClose={this.close}>
@@ -123,8 +123,8 @@ class SubmitModal extends Component {
 							onChange={this.handleChange}
 						/>
 						</Form.Field>
-                    <Form.Field>
-                    <label htmlFor="pullquote">Summary </label>
+            <Form.Field>
+            <label htmlFor="pullquote">Summary </label>
 						<input
 							type="text"
 							name="pullquote"
