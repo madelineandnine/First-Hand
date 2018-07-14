@@ -31,7 +31,7 @@ const DisplayLinks = props => {
         <ul className="nav">
           <li className="nav-item">
             <StyledButton>
-              <Link to="/" className="navLink">
+              <Link to="/api/submissions" className="navLink">
                 Home
               </Link>
             </StyledButton>
