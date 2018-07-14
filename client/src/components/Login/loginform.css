@@ -1,3 +1,13 @@
 body {
-    color: rgba(0,0,0,.87)
+    color: #d30b0d !important;
+}
+
+#redLabel {
+    color: #d30b0d !important;
+}
+
+.ui.form .field>label {
+    display: block;
+    margin: 0 0 .28571429rem 0;
+    color: none !important;
 }

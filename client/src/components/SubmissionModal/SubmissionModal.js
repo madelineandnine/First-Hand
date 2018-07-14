@@ -4,6 +4,7 @@ import SubmitButton from '../Button/SubmitButton'
 import LoginForm from './LoginForm'
 import './SubmissionModal.css'
 
+
 class LoginModal extends Component {
   state = { open: false }
 
