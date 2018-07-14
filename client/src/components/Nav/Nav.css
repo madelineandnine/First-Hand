@@ -10,7 +10,9 @@
 
 .ui-button {
   padding: 10px; 
-  float: right; 
 }
 
 
+.navLink {
+  color: white !important;
+}

@@ -31,7 +31,7 @@ const HomepageHeading = ({ mobile }) => (
         fontWeight: 'normal',
         marginBottom: 0,
 				marginTop: mobile ? '1.5em' : '3em',
-        fontFamily: 'Raleway'
+        fontFamily: 'Contrail One',
       }}
     />
     {/* <Header
@@ -47,16 +47,15 @@ const HomepageHeading = ({ mobile }) => (
       }}
     /> */}
         <Header
-      as='h4'
-      content='find stories and letters to put a face to current events'
+      as='h4' 
+      content='a service to help you put a face or a story to actual current events: 
+      create an account to find and share stories now'
       inverted
       style={{
         fontSize: mobile ? '1.2em' : '1.5em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
-        fontFamily: 'Raleway',
-        fontStyle: 'italic',
-
+        fontFamily: 'Open Sans',
       }}
     />
   </Container>
@@ -88,7 +87,7 @@ class DesktopContainer extends Component {
           onBottomPassedReverse={this.hideFixedMenu}
         >
           <Segment
-            inverted
+            inverted color='blue'
             textAlign='center'
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
@@ -96,9 +95,9 @@ class DesktopContainer extends Component {
             <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
-              pointing={!fixed}
               secondary={!fixed}
               size='large'
+              borderless={!fixed}
             >
               <Container>
                 <Nav />
@@ -142,6 +141,7 @@ class MobileContainer extends Component {
             </Menu.Item>
             <Menu.Item as='a'>Log in</Menu.Item>
             <Menu.Item as='a'>Sign Up</Menu.Item>
+
           </Sidebar>
 
           <Sidebar.Pusher

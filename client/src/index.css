@@ -28,6 +28,7 @@ body {
   margin-top: 15px;
 }
 
-#popup-text {
-  color: black;
+.ui.search, .searchBar {
+  float: right !important;
 }
+

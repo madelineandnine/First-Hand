@@ -8,6 +8,9 @@ import { Search, Grid, Header, Segment } from 'semantic-ui-react'
  
 }))
 
+
+
+
 export default class SearchStandard extends Component {
   constructor(props) {
     super(props);
@@ -57,9 +60,10 @@ export default class SearchStandard extends Component {
     })
   }
 
+
+
   render() {
     const { isLoading, value, results } = this.state
-
     return (
       
           <Search
@@ -69,6 +73,7 @@ export default class SearchStandard extends Component {
             results={results}
             value={value}
             {...this.props}
+            className="searchBar"
           />
        /*  </Grid.Column>
         <Grid.Column width={10}>
