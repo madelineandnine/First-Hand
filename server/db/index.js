@@ -3,7 +3,7 @@
 */
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
-let MONGO_URL
+let MONGO_URL = 'mongodb://<dbuser>:<dbpassword>@ds235461.mlab.com:35461/heroku_mbs0wz7w'
 const MONGO_LOCAL_URL = 'mongodb://localhost/mern-passport'
 
 if (process.env.MONGODB_URI) {
