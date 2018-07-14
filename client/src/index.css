@@ -28,7 +28,20 @@ body {
   margin-top: 15px;
 }
 
-.ui.search, .searchBar {
+.ui.search,
+.searchBar {
   float: right !important;
 }
 
+.ui.modal > .header {
+  font-family: 'Contrail One' !important;
+  text-transform: uppercase !important;
+  color: #d30b0d !important;
+}
+
+
+.ui.form > .field.label {
+  font-family: 'Contrail One' !important;
+  text-transform: uppercase !important;
+  color: #d30b0d !important;
+}

@@ -1,9 +1,40 @@
 import React, { Component } from 'react'
-import { Button, Modal, Form, TextArea } from 'semantic-ui-react'
+import { Button, Modal, Form, TextArea, Segment } from 'semantic-ui-react'
 import { SubmitButton } from '../components/Button/SubmitButton'
 import LoginForm from '../components/Login/LoginForm'
 import API from "../utils/API"; 
 import axios from 'axios'
+import styled from 'styled-components';
+
+const StyledModal = styled(Modal)`
+	font-family: 'Contrail One' !important;
+	font-size: 24px !important;
+	text-transform: uppercase !important;
+	border-radius: 0 !important;
+	color: white !important;
+`;
+
+const RedForm = styled(Form) `
+font-family: 'Contrail One' !important;
+font-size: 14px !important;
+border-radius: 0 !important;
+color: #d30b0d !important;
+`
+
+const StyledButton = styled.button`
+  color: white;
+  background: #d30b0d;
+  font-family: 'Contrail One';
+  margin: 0 0.75em 0 0;
+  padding: 0.78571429em 1.5em 0.78571429em;
+  font-weight: 700;
+`;
+
+const RedSegment = styled(Segment) `
+background-color: #d30b0d !important;
+box-shadow: none !important;
+border-radius: 0 !important;
+`
 
 class SubmitModal extends Component {
     constructor (props) {
@@ -77,10 +108,12 @@ class SubmitModal extends Component {
         <Button onClick={this.show('tiny')}>Tell Your Story Here! </Button>
      
 
-        <Modal className="scrolling" size={size} open={open} onClose={this.close}>
-          <Modal.Header>Submit your Story</Modal.Header>
+        <StyledModal className="scrolling" size={size} open={open} onClose={this.close}>
+          <RedSegment>
+					<Modal.Header>Submit your Story</Modal.Header>
+					</RedSegment>
           <Modal.Content>
-                <Form>
+                <RedForm>
                 <Form.Field>
 						<label htmlFor="topic">Topic </label>
 						<input
@@ -100,15 +133,15 @@ class SubmitModal extends Component {
 						/>
 						</Form.Field>
                         <Form.TextArea name='language' label='language' type="text" value={this.state.language} onChange={this.handleChange} />
-					 <Button className="submitButton" onClick={this.handleSubmit}>Submit</Button> 
+					 <StyledButton className="submitButton" onClick={this.handleSubmit}>Submit</StyledButton> 
 
-                    </Form>
+                    </RedForm>
             </Modal.Content>
           {/* <Modal.Actions>
             <Button negative>No</Button>
             <Button positive icon='checkmark' labelPosition='right' content='Yes' onClick={this.handleSubmit} />
           </Modal.Actions> */}
-        </Modal>
+        </StyledModal>
       </div>
     )
   }
