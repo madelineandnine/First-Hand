@@ -5,7 +5,7 @@ import API from "../utils/API";
 import axios from 'axios'
 import styled from 'styled-components'
 
-const StyledButton = styled.button`
+const StyledButton = styled(Button)`
   color: white;
   background: #013364;
   border: 2px solid white;
