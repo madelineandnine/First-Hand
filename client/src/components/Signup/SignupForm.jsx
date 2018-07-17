@@ -50,6 +50,15 @@ const StyledMessage = styled(Message)`
   margin: 0px !important;
 `;
 
+const StyledLabel = styled.label`
+  font-family: 'Contrail One' !important;
+  font-size: 16px !important;
+  text-transform: uppercase !important;
+  color: white !important;
+  background: none !important;
+  margin-bottom: 0 !important;
+`;
+
 class SignupForm extends Component {
   constructor() {
     super();
@@ -103,9 +112,11 @@ class SignupForm extends Component {
             <StyledForm size="large">
               <BlueSegment>
                 <Form.Field>
-                  <label htmlFor="username" color="white">
-                    Username{' '}
-                  </label>
+                  <StyledLabel>
+                    <label htmlFor="username" color="white">
+                      Username{' '}
+                    </label>
+                  </StyledLabel>
                   <input
                     type="text"
                     name="username"
@@ -114,7 +125,9 @@ class SignupForm extends Component {
                   />
                 </Form.Field>
                 <Form.Field>
-                  <label htmlFor="zipcode">Zipcode </label>
+                  <StyledLabel>
+                    <label htmlFor="zipcode">Zipcode </label>
+                  </StyledLabel>
                   <input
                     type="number"
                     name="zipcode"
@@ -123,7 +136,9 @@ class SignupForm extends Component {
                   />
                 </Form.Field>
                 <Form.Field>
-                  <label htmlFor="password">Password </label>
+                  <StyledLabel>
+                    <label htmlFor="password">Password </label>
+                  </StyledLabel>
                   <input
                     type="password"
                     name="password"
@@ -132,7 +147,9 @@ class SignupForm extends Component {
                   />
                 </Form.Field>
                 <Form.Field>
-                  <label htmlFor="confirmPassword">Confirm Password </label>
+                  <StyledLabel>
+                    <label htmlFor="confirmPassword">Confirm Password </label>
+                  </StyledLabel>
                   <input
                     type="password"
                     name="confirmPassword"

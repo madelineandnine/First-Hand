@@ -30,6 +30,19 @@ const StyledButton = styled.button`
   font-weight: 700;
 `;
 
+const BlueButton = styled(Button) `
+&&& {
+  color: white;
+  background: #013364;
+  border: 2px solid white;
+  box-shadow: 3px 5px;
+  font-family: 'Contrail One';
+  margin: 0 0.75em 0 0;
+  padding: 0.78571429em 1.5em 0.78571429em;
+  font-weight: 700;
+}
+`
+
 const RedSegment = styled(Segment) `
 background-color: #d30b0d !important;
 box-shadow: none !important;
@@ -108,7 +121,7 @@ close = () => this.setState({ open: false })
 
     return (
       <div>
-         <StyledButton onClick={this.show('tiny')}>Tell Your Story Here! </StyledButton>
+         <BlueButton onClick={this.show('tiny')}>Tell Your Story Here! </BlueButton>
      
 
         <StyledModal className="scrolling" size={size} open={open} onClose={this.close}>

@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React, {Component} from 'react'
-import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
+import { Button, Header, Icon, Image, Modal, Segment } from 'semantic-ui-react'
 import styled from 'styled-components'
 import {
   FacebookShareButton,
@@ -26,8 +26,25 @@ const StyledButton = styled.button`
 const StyledModalHeader = styled(Modal.Header)`
   font-family: 'Contrail One'; 
   font-weight: 700; 
-  color: #013364;
+  color: #013364 !important;
 `;
+
+const StyledLeft = styled(Segment) `
+&&& {
+  float: left !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-top: -35px !important;
+}
+`
+
+const StyledModal = styled(Modal) `
+&&& {
+ max-height: 400px !important;
+  min-height: 200px !important;
+}
+`
 
 export default class ExpandModal extends Component {
   
@@ -47,7 +64,7 @@ export default class ExpandModal extends Component {
     render() {
         const { submission } = this.props;
       return (
-        <Modal className="scrolling" trigger={<StyledButton>Get More Here</StyledButton>}>
+        <StyledModal className="scrolling" trigger={<StyledButton>Get More Here</StyledButton>}>
     <Modal.Header >{submission.topic}</Modal.Header>
     <Modal.Content>
 
@@ -62,10 +79,9 @@ export default class ExpandModal extends Component {
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
-    <InvolveModal />
-    <div className="inlineButtons">
     
-
+    <div className="inlineButtons">
+    <StyledLeft>
     <FacebookShareButton
       className="shareButtons"
       url="www.facebook.com"
@@ -89,10 +105,14 @@ export default class ExpandModal extends Component {
     >
       <RedditIcon size={32} round={true} />
     </RedditShareButton>
+    </StyledLeft>
+    
+    <InvolveModal />
+
     
     </div>
     </Modal.Actions>
-  </Modal>
+  </StyledModal>
       );
     }
   }

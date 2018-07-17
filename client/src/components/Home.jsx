@@ -16,7 +16,7 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 import Nav from './Nav'
-import background from './Images/background.jpg'
+import HomepageGraphic from './HomepageGraphic'
 
 
 
@@ -89,7 +89,7 @@ class DesktopContainer extends Component {
           <Segment
             inverted color='blue'
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ minHeight: 600, padding: '1em 0em' }}
             vertical
           >
             <Menu
@@ -106,9 +106,10 @@ class DesktopContainer extends Component {
             <HomepageHeading />
           </Segment>
         </Visibility>
-
+< HomepageGraphic/>
         {children}
       </Responsive>
+  
     )
   }
 }
@@ -165,7 +166,7 @@ class MobileContainer extends Component {
               </Container>
               <HomepageHeading mobile />
             </Segment>
-
+            < HomepageGraphic />
             {children}
           </Sidebar.Pusher>
         </Sidebar.Pushable>
