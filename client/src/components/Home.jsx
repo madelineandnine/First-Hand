@@ -48,7 +48,7 @@ const HomepageHeading = ({ mobile }) => (
     /> */}
         <Header
       as='h4' 
-      content='a service to help you put a face or a story to actual current events: 
+      content='a service to help you put a voice to current events: 
       create an account to find and share stories now'
       inverted
       style={{
