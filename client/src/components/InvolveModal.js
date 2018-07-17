@@ -5,7 +5,8 @@ import API from "../utils/API";
 import axios from 'axios'
 import styled from 'styled-components'
 
-const StyledButton = styled.button`
+const StyledButton = styled(Button)` 
+&&& {
   color: white;
   background: #013364;
   border: 2px solid white;
@@ -14,14 +15,25 @@ const StyledButton = styled.button`
   margin: 0 0.75em 0 0;
   padding: 0.78571429em 1.5em 0.78571429em;
   font-weight: 700;
+}
 `;
+
+const StyledHeader = styled(Header) `
+&&& {
+background: #d30b0d !important;
+border-radius: 0 !important;
+color: white !important;
+}
+`
 
 const InvolveModal = () => {
     const sizes = [ 'massive']
 
     return (
     <Modal className="scrolling" trigger={<StyledButton>Get Involved</StyledButton>} closeIcon>
-      <Header icon='archive' content='Get Involved' />
+      <StyledHeader>
+      <Header icon='archive' content='Get Involved' style={{color: 'white'}}/>
+      </StyledHeader>
       <Modal.Content>
       <List divided animated size={'massive'} verticalAlign='middle'>
       <List.Item >

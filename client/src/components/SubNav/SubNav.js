@@ -17,7 +17,8 @@ const StyledMenu = styled.menu `
   margin: 0px;
  }
 `
-const StyledButton = styled.button`
+const StyledButton = styled(Button)` 
+&&& {
   color: white;
   background: #013364;
   border: 2px solid white;
@@ -26,6 +27,7 @@ const StyledButton = styled.button`
   margin: 0 0.75em 0 0;
   padding: 0.78571429em 1.5em 0.78571429em;
   font-weight: 700;
+}
 `;
 /* 
 const StyledSearchStandard = styled(div) `

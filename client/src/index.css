@@ -36,7 +36,7 @@ body {
 .ui.modal > .header {
   font-family: 'Contrail One' !important;
   text-transform: uppercase !important;
-  color: #d30b0d !important;
+  background: none;
 }
 
 
@@ -44,4 +44,12 @@ body {
   font-family: 'Contrail One' !important;
   text-transform: uppercase !important;
   color: #d30b0d !important;
+}
+
+.ui.modal>.header:not(.ui) {
+  font-size: 1.42857143rem;
+  line-height: 1.28571429em;
+  font-weight: 700;
+  background:  #d30b0d !important;
+  color: white !important;
 }
