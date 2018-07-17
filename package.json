@@ -38,14 +38,14 @@
 	"scripts": {
 		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
 		"start:dev": "concurrently \"nodemon --ignore 'client/**/*'\" \"npm run client\"",
-		"start:prod": "nodemon server/server.js",
+		"start:prod": "node server/server.js",
 		"client": "cd client && npm run start",
 		"install": "cd client && yarn install;",
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject",
 		"dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
-		"prod": "export NODE_ENV=\"production\" && nodemon server/server.js"
+		"prod": "export NODE_ENV=\"production\" && node server/server.js"
 	},
 	"proxy": "http://localhost:8080"
 }
