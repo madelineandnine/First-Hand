@@ -7,7 +7,7 @@ let MONGO_URL = 'mongodb://<dbuser>:<dbpassword>@ds235461.mlab.com:35461/heroku_
 const MONGO_LOCAL_URL = 'mongodb://localhost/mern-passport'
 
 if (process.env.MONGODB_URI) {
-	mongoose.connect(MONGO_URL)
+	mongoose.connect(process.env.MONGODB_URI)
 	MONGO_URL = process.env.MONGODB_URI
 } else {
 	mongoose.connect(MONGO_LOCAL_URL) // local mongo url
