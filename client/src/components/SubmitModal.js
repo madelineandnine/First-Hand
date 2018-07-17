@@ -49,6 +49,8 @@ box-shadow: none !important;
 border-radius: 0 !important;
 `
 
+
+
 class SubmitModal extends Component {
     constructor (props) {
         super(props)
@@ -92,7 +94,8 @@ class SubmitModal extends Component {
 				if (response.status === 200) {
 					// update the state
 					this.setState({
-						
+            redirectTo: '/api/submissions'
+
 					})
 				}
 			})
@@ -103,15 +106,15 @@ class SubmitModal extends Component {
 		console.log('handleSubmit')
 		this._create(this.state.topic, this.state.pullquote, this.state.language)
 		console.log(this.state.topic)
-		this.setState({
-			redirectTo: '/api/submissions'
-		})
+    this.setState({ open: false })
+    window.location.reload(true);
+
+   
 	}
 
-  
+show = size => () => this.setState({ size, open: true })
+close = () => this.setState({ open: false })
 // state = { open: false }
-  show = size => () => this.setState({ size, open: true })
-  close = () => this.setState({ open: false })
 
   render() {
     const { open, size } = this.state
@@ -145,15 +148,15 @@ class SubmitModal extends Component {
 							onChange={this.handleChange}
 						/>
 						</Form.Field>
-                        <Form.TextArea name='language' label='language' type="text" value={this.state.language} onChange={this.handleChange} />
-					 <StyledButton className="submitButton" onClick={this.handleSubmit}>Submit</StyledButton> 
+                        <Form.TextArea name='language' label='Your Story' type="text" value={this.state.language} onChange={this.handleChange} />
+					 {/* <StyledButton className="submitButton" onClick={this.handleSubmit}>Submit</StyledButton>  */}
 
                     </RedForm>
             </Modal.Content>
-          {/* <Modal.Actions>
-            <Button negative>No</Button>
-            <Button positive icon='checkmark' labelPosition='right' content='Yes' onClick={this.handleSubmit} />
-          </Modal.Actions> */}
+           <Modal.Actions>
+          
+            <StyledButton labelPosition='right' onClick={this.handleSubmit} />
+          </Modal.Actions> 
         </StyledModal>
       </div>
     )

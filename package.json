@@ -1,8 +1,13 @@
 {
-	"name": "react-template",
+	"name": "first-hand",
 	"version": "0.1.0",
 	"private": true,
 	"main": "server/server.js",
+	"engines": {
+		"node": "8.11.1",
+		"yarn": "1.7.0", 
+		"npm": "6.1.0"
+	},
 	"dependencies": {
 		"axios": "^0.18.0",
 		"bcrypt": "^1.0.2",
@@ -33,7 +38,7 @@
 	"scripts": {
 		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
 		"start:dev": "concurrently \"nodemon --ignore 'client/**/*'\" \"npm run client\"",
-		"start:prod": "node server/server.js",
+		"start:prod": "nodemon server/server.js",
 		"client": "cd client && npm run start",
 		"install": "cd client && yarn install;",
 		"build": "react-scripts build",
@@ -41,5 +46,6 @@
 		"eject": "react-scripts eject",
 		"dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
 		"prod": "export NODE_ENV=\"production\" && nodemon server/server.js"
-	}
+	},
+	"proxy": "http://localhost:8080"
 }
