@@ -74,7 +74,7 @@ export default class Submissions extends Component {
               <div className="inlineButtons">
                 <FacebookShareButton
                   className="shareButtons"
-                  url="www.facebook.com"
+                  url="https://greve-bastille-92738.herokuapp.com/api/submissions"
                   quote={submission.topic}
                 >
                   <FacebookIcon size={32} round={true} />
@@ -82,7 +82,7 @@ export default class Submissions extends Component {
 
                 <TwitterShareButton
                   className="shareButtons"
-                  url="www.facebook.com"
+                  url="https://greve-bastille-92738.herokuapp.com/api/submissions"
                   quote={submission.topic}
                 >
                   <TwitterIcon size={32} round={true} />
@@ -90,7 +90,7 @@ export default class Submissions extends Component {
 
                 <RedditShareButton
                   className="shareButtons"
-                  url="www.facebook.com"
+                  url="https://greve-bastille-92738.herokuapp.com/api/submissions"
                   quote={submission.topic}
                 >
                   <RedditIcon size={32} round={true} />
