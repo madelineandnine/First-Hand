@@ -69,7 +69,7 @@ if (process.env.NODE_ENV === 'production') {
 	// app.get('/', (req, res) => {
 	// 	res.sendFile(path.join(__dirname, '../build/'))
 	// })
-	app.use(express.static('client/build/public'));
+	app.use(express.static('client/build'));
 }
 
 /* Express app ROUTING */
