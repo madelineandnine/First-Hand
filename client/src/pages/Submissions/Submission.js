@@ -32,6 +32,7 @@ export default class Submissions extends Component {
       date: '',
     };
   }
+  
 
   // Uses API to get data from database and fill empty array
   componentDidMount() {
@@ -48,7 +49,6 @@ export default class Submissions extends Component {
       this.setState({ submission: res.data });
     });
   };
-
 
 
   // Renders database as list on page with social media share buttons

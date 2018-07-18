@@ -18,16 +18,17 @@ const RedForm = styled(Form) `
 font-family: 'Contrail One' !important;
 font-size: 14px !important;
 border-radius: 0 !important;
-color: #d30b0d !important;
+
 `
 
 const StyledButton = styled.button`
-  color: white;
+  color: white !important;
   background: #d30b0d;
-  font-family: 'Contrail One';
+  font-family: 'Contrail One' !important;
+  font-size: 16px;
   margin: 0 0.75em 0 0;
-  padding: 0.78571429em 1.5em 0.78571429em;
-  font-weight: 700;
+  padding: .75em .5em;
+  font-weight: 200;
 `;
 
 const BlueButton = styled(Button) `
@@ -155,8 +156,8 @@ close = () => this.setState({ open: false })
             </Modal.Content>
            <Modal.Actions>
           
-            <StyledButton labelPosition='right' onClick={this.handleSubmit} />
-          </Modal.Actions> 
+           <StyledButton labelPosition='right' onClick={this.handleSubmit}>Submit </StyledButton>        
+             </Modal.Actions> 
         </StyledModal>
       </div>
     )

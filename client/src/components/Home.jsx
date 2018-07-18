@@ -48,14 +48,14 @@ const HomepageHeading = ({ mobile }) => (
     /> */}
         <Header
       as='h4' 
-      content='a service to help you put a voice to current events: 
-      create an account to find and share stories now'
+      content='putting a voice to current events' 
       inverted
       style={{
         fontSize: mobile ? '1.2em' : '1.5em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
         fontFamily: 'Open Sans',
+        
       }}
     />
   </Container>
