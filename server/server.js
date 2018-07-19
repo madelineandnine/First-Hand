@@ -85,6 +85,10 @@ app.use(function(err, req, res, next) {
 	res.status(500)
 })
 
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
+
 // ==== Starting Server =====
 app.listen(PORT, () => {
 	console.log(`App listening on PORT: ${PORT}`)
